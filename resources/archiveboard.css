@@ -1,56 +1,221 @@
-body {
-    color: rgb(0, 0, 0);
-  background-color: rgb(248, 251, 252);
-
+html {
+    font-family: "Azeret Light", monospace;
+    font-size: 14px;
+    color:black;
+    margin: 2rem;
 }
 
-h1 {
-  color: rgb(0, 0, 0); 
-  font-size: 80px;
-  display: flex;
-  justify-content: center;
-}
-  .homepagetitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border: 1px solid rgb(255, 255, 255); 
-
-}
-
-  .table {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 50px;
-  border: 1px solid rgb(255, 255, 255); 
+@font-face {
+    font-family: "MatrisePro";
+    src: url('font.woff') format('woff');
   }
 
+  @font-face {
+    font-family: "Azeret Bold";
+    src: url('AzeretMono-SemiBold.ttf') format('woff');
+  }
 
+  @font-face {
+    font-family: "Azeret Light";
+    src: url('AzeretMono-Light.woff') format('woff');
+  }
+  
 
+button:hover {
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
 
-* {
-    font-size: 12pt;
-    line-height: 14pt;
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+#title {
+    position: absolute;
+    left: 2rem;
+    top:1rem;
+    display: block;
+    z-index: -2;
+}
+
+#title2 {
+    position: absolute;
+    right: 2rem;
+    top:1rem;
+    display: block;
+    z-index: -2;
+    text-align: right;
+}
+
+#title3 {
+    position: absolute;
+    top:8rem;
+    right: 60%;
+    text-align: right;
+    z-index: -2;
+}
+
+#title4 {
+    position: absolute;
+    top:13rem;
+    z-index: -2;
+    left: 60%;
+    text-align: left;
+}
+
+.main-title {
+    font-family: "MatrisePro";
+    font-size: 6rem;
+    position: fixed;
+    bottom: 0; left: -1rem;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: -3;
+}
+  
+  #responses{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;left: 0;
+    box-sizing: border-box;
+    z-index: -1;
+    color: black;
+  }
+  
+  
+  #responses .each-icon{
+    position: absolute;
+    text-align: center;
+    margin: .5rem;
+    cursor: pointer;
+  }
+
+  
+  #responses .each-icon[seen]{
+    opacity: 0.2;
+  }
+  
+  .each-icon .icons{
+    font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .each-icon .icons:hover{
+    color: rgba(0, 0, 0, 0.436);
+    transition: .4s ease-in-out;
+  }
+  
+  #responses .each-icon p {
+    display: none;
+    font-size: .6rem;
+    margin: 0;
+  }
+
+  
+  
+  
+  /* Filter the clouds */
+  
+  #filter{
+    position: fixed;
+    bottom: 1rem; left: -1rem;
+    width: 100%;
+     text-align: center;
+  }
+  
+  #filter button, button, .top{
+    cursor: pointer;
+    font-size: 1 rem;
+    color: black;
+    font-family: "MatrisePro", monospace;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 9rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    margin: .5rem;
+  }
+
+  #filter button:hover, .top:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: .4s ease-in-out;
 }
 
-/* font-face is used to use your own custom, non-systems fonts. place file in resources folder, same has this index.css file*/
-/*@font-face {
-    font-family: "";
-    src: url(./);
+.top {
+    position: fixed;
+    top: 0; left: 47vw;
+    text-align: center;
+    font-family: "MatrisePro", monospace;
+    cursor: pointer;
 }
+  
+  
+  /* Look at a responses */
+  
+  #look{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: white;
+    color: black;
+    display: none;
+  }
+  
+  #look .wrapper{
+    position: absolute;
+    width: 50vw;
+    height: 80vh;
+    object-fit: fill;
+    object-position: top;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; /change with whatever justification you want text on popup to be/
+  }
 
-/* how you want the structure of your submissions to appear below. display: grid; and display: flex; are good places to start */
-/*.grid {
+  /* smartphone */
+@media only screen and (max-width: 1000px), (orientation: portrait) {
+    #title2, #title {
+        top: 3rem;
+    }
 
-/*}
+    #title3 {
+        right: 50%;
+        text-align: right;
+    }
 
-/* how do you want each individual submission to appear? do they have a border: 1px black solid; etc. a different font-family, font-size or color? */
-/*.grid div {
+    #title4 {
+        left: 50%;
+        text-align: left;
+    }
 
+    .main-title {
+        font-size: 3rem;
+        z-index: -3;
+        bottom:3rem;
+    }
+
+    #look .wrapper{
+        width: 80vw;
+      }
+
+      .top {
+        left: 43vw;
+      }
 }
-
-/* some other things you should consider for css styling are: 
-html, <h1>, <p>, <div>, .classes, #IDs, img, a */

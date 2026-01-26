@@ -4,7 +4,7 @@
 <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutual Aid Map</title>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./resources/index.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
     <link rel="icon" type="image/x-icon" href="./resources/"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
@@ -14,25 +14,27 @@
 
 <body>
 
-<h1>A Mutual Aid Map</h1>
-
 <header class="table">
-<div class="header">
-        
+
+    <div class="header">
+     <a href="index.html">Mutual Aid Archive</a>
 <a href="about.html">About</a>
+<a href="archiveboard.html">Archive Map</a>
+<a href="offersandrequests.html">Offers and Requests</a>
+<a href="Reflection.html">Reflection</a>
 <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a> 
 
     </div>
     
 </header>
 
+<h1>Archive Map</h1>
 
 
 <!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
     <div class="grid"> 
 
     </div>
-
 
 
 <script>
@@ -56,8 +58,7 @@ fetch(url)
     data.forEach(entry => {
       const section = document.createElement("section");
       section.innerHTML = `
-        <p>${entry.Q1}</p>
-        <p>${entry.Q2}</p>
+        <p>${entry.Q3}</p>
       `;
       grid.appendChild(section);
     });
@@ -67,6 +68,114 @@ fetch(url)
   });
 </script>
 
+
+      
+    <div class="main">
+   
+</div>
+      
+    <!--  Dots are dumped here -->
+    <div id="responses">
+    
+    </div>
+    
+    <!--  This appears when you click on a dot  -->
+    
+    <div id="look">
+      <div class="wrapper">
+        <div class="each-icon">
+    <span class="icons"></span>
+    <p></p>
+    <button hide>Back</button>
+        </div>
+        </div>
+    </div>
+
+
+<!-- this javascript was modified from a sheets site tutorial by chia amisola  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="code.js" type="text/javascript"></script>
+  </body>
+
+  <script>
+
+// gets a random integer between the min and max to randomize location of dots/icons
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+var SPREADSHEET_ID_AND_TAB = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
+
+
+$(document).ready(function () {
   
-   </body>
-    </html>
+  $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB, function (data) {
+    
+    data.forEach(function (row, index) {
+      if(index == 0) return; // Skip the header row of sheet
+      
+      let div = $(<div class='each-icon' type=' + row.type +' index=" + index +`">
+        <span class='icons'> + row.dot +</span> 
+        <p> +  row.Q3 + </p>
+        </div>`) 
+      .attr("title", row.Q3)
+      .css("top", getRandomInt(0, 80) + "%")
+      .css("left", getRandomInt(0, 90) + "%")
+      .appendTo("#responses");
+    });
+  });  
+});
+  
+
+// Filter
+
+// $("#filter").on("click", "button[filter]", function(){
+  
+//   $("#filter button[filter]").css("opacity", 0.3);
+//   $(this).css("opacity", 1);
+  
+//   let to_filter = $(this).attr("filter");
+//   console.log(to_filter);
+  
+//   if(to_filter == "all"){
+//     $("#responses .each-icon").show();
+//     return;
+//   }
+  
+//     $("#responses .each-icon").hide();
+//     $("#responses .each-icon[type='" + to_filter +"']").show();
+// });
+
+
+// Look at dots
+$("#responses").on("click", ".each-icon", function() {
+  
+  // Get information from the clicked dots
+  let index = $(this).attr("index");
+  let symbol = $(this).find(".icons").text();
+  let Q3 = $(this).find("p").text();
+
+  // Update the modal or display area with the information
+  $("#look .each-icon .icons").text(symbol);
+  $("#look .each-icon p").text(Q3);
+
+  $("#look").show(); // Show the modal
+
+  // Mark dot/icon as seen
+  $("#responses .each-icon[index='" + index + "']").attr("seen", "");
+});
+
+
+// hide when button is clicked
+$("#look").on("click", "button[hide]", function(){
+  $("#look").hide();
+});
+
+
+
+  </script>
+  </html>
