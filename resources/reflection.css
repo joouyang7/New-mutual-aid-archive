@@ -10,8 +10,7 @@
   padding: 14px 16px;
   display: flex;
   float: left;
-    font-family: "Asul", serif;
-    src: url(./Asul-Regular.ttf);
+ font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
@@ -31,7 +30,7 @@ h1 {
   font-size: 40px;
   display: flex;
   justify-content: left;
-  font-family: "Asul", serif;
+   font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
 }
@@ -42,8 +41,8 @@ h2 {
   color: rgb(0, 0, 0); 
   display: flex;
   justify-content: left;
-  font-family: "Inclusive Sans", sans-serif;
-    src: url(./InclusiveSans-Regular.ttf);
+  font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -52,8 +51,8 @@ h2 {
 body {
     color: rgb(0, 0, 0);
   background-color: white;
-   font-family: "Inclusive Sans", sans-serif;
-    src: url(./InclusiveSans-Regular.ttf);
+ font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

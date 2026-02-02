@@ -10,8 +10,7 @@
   padding: 14px 16px;
   display: flex;
   float: left;
- font-family: "Yatra One", system-ui;
-  src: url(./YatraOne-Regular.ttf);
+font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
@@ -27,11 +26,10 @@
 }
 h1 {
   color: rgb(0, 0, 0); 
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   justify-content: left;
-   font-family: "Yatra One", system-ui;
-  src: url(./YatraOne-Regular.ttf);
+ font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
 }
@@ -40,10 +38,9 @@ h2 {
   color: rgb(0, 0, 0); 
   display: flex;
   justify-content: left;
-  font-family: "Inclusive Sans", sans-serif;
-    src: url(./InclusiveSans-Regular.ttf);
-  font-optical-sizing: auto;
-  font-weight: 700;
+       font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
+   font-weight: 400;
   font-style: normal;
   font-size: 30px;
 }
@@ -51,10 +48,9 @@ h2 {
 body {
     color: rgb(0, 0, 0);
  background: white;
-    font-family: "Inclusive Sans", sans-serif;
-    src: url(./InclusiveSans-Regular.ttf);
-  font-optical-sizing: auto;
-  font-weight: 400;
+ font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
+   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   padding: 20px;
@@ -72,50 +68,61 @@ body {
     .content-wrapper {
         display: flex; /* Arranges children side by side */
         height: 100vh; /* Makes the wrapper take the full viewport height */
-        overflow: hidden; /* Prevents the main page from scrolling */
+      /* Prevents the main page from scrolling */
   }
 
     /* Style for the left container */
-    .left-container {
-        flex-grow: 1;
-        width: 40%;
+    .left {
+      flex-grow: 1;
+        width: 50%;
         background-color: white;
-        box-sizing: border-box;
-        font-size: 100px;
+        color: rgb(0, 0, 0); 
+          overflow-y: scroll;
   justify-content: left;
   align-items: left;
-margin: 20px;
+  margin-left: 20px;
+  word-wrap: normal;
     }
 
     /* Style for the right container */
-    .right-container {
+    .right {
          flex-grow: 1; /* Allows it to grow and fill available space */
-        width: 60%; /* Sets initial width */
+        width: 50%; /* Sets initial width */
         background-color: white;
-        box-sizing: border-box; /* Includes padding in the width calculation */
         color: rgb(0, 0, 0); 
-          overflow-y: scroll; /* Enables vertical scrolling only for this container */
+          overflow: hidden; /* Enables vertical scrolling only for this container */
   justify-content: left;
   align-items: left;
- margin: 20px;
+  margin-right: 20px;
   
     }
+  
 
-    /* Optional: Add content styling to ensure sufficient height for scrolling */
-    .left-container p, .right-container p {
-        /* Example: a long list of items */
-        margin: 20px;
-        margin-bottom: 1em; 
-        line-height: 1.5;
-    }
-
-    /* Optional: Add media queries for mobile responsiveness to stack panels */
-@media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column; /* Stack vertically on small screens */
-  }
-  .left, .right {
-    flex: 100%; /* Each takes full width */
-    height: 50vh; /* Each takes half the height */
-  }
+.sideinfo {
+  display:grid;
+  border-style: solid;
+  border-color: red;
+  padding: 10px;
+     text-align: left;  
 }
+.sideinfo a { list-style-type: none;
+  margin: 0;
+  text-align: center;
+  padding: 14px 16px;
+  float: left;
+font-family: "Silom", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+
+      @media screen and (max-width: 768px) {
+        .content-wrapper {
+            flex-direction: column; /* Stack panels vertically on small screens */
+        }
+        .left, .right {
+            width: 100%; /* Full width for both containers */
+            height: 50vh; /* Half viewport height each */
+        }
+      }
