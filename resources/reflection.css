@@ -94,11 +94,6 @@ body {
   margin-right: 20px;
     }
 
-    .grid div{
-        row-gap: 40px;
-        padding: 100px;
-    }
-
     /* Optional: Add content styling to ensure sufficient height for scrolling */
     .left-container p, .right-container p {
         line-height: 1.5;
