@@ -10,7 +10,7 @@
   padding: 14px 16px;
   display: flex;
   float: left;
- font-family: "YatraOne", serif;
+ font-family: "Yatra One", system-ui;
   src: url(./YatraOne-Regular.ttf);
   font-weight: 400;
   font-style: normal;
@@ -34,7 +34,7 @@ h1 {
   font-size: 40px;
   display: flex;
   justify-content: left;
-  font-family: "YatraOne", serif;
+   font-family: "Yatra One", system-ui;
   src: url(./YatraOne-Regular.ttf);
   font-weight: 400;
   font-style: normal;
