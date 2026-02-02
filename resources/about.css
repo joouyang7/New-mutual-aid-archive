@@ -1,58 +1,119 @@
-body {
-    color: rgb(0, 0, 0);
-  background-color: rgb(248, 251, 252);
-
+.topnav {
+ background-color: white;
+ overflow: hidden
 }
 
+.topnav a {
+      list-style-type: none;
+  margin: 0;
+  text-align: center;
+  padding: 14px 16px;
+  display: flex;
+  float: left;
+    font-family: "Asul", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+}
+.topnav-right :hover {
+  background-color: red;
+  color: white;
+}
 h1 {
   color: rgb(0, 0, 0); 
-  font-size: 80px;
-}
-
-  .homepagetitle {
+  font-size: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border: 1px solid rgb(255, 255, 255); 
-
+  justify-content: left;
+  font-family: "Asul", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-  .table {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 50px;
-  border: 1px solid rgb(255, 255, 255); 
-  }
 
 h2 {
   color: rgb(0, 0, 0); 
-  font-size: 80pt;
+  display: flex;
+  justify-content: left;
+  font-family: "Inclusive Sans", sans-serif;
+    src: url(./InclusiveSans-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+
+body {
+    color: rgb(0, 0, 0);
+ background: white;
+    font-family: "Inclusive Sans", sans-serif;
+    src: url(./InclusiveSans-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  padding: 20px;
+  
 }
 
 
-* {
-    font-size: 12pt;
-    line-height: 14pt;
-    font-family: Arial, Helvetica, sans-serif;
+    /* Ensure the body and html use the full height of the viewport */
+    html, body {
+        height: 100%;
+        overflow: hidden; /* Hide default body scrollbar */
+    }
+
+    /* Set up the main container with Flexbox */
+    .content-wrapper {
+        display: flex; /* Arranges children side by side */
+        height: 100vh; /* Makes the wrapper take the full viewport height */
+        overflow: hidden; /* Prevents the main page from scrolling */
+  }
+
+    /* Style for the left container */
+    .left-container {
+        flex-grow: 1;
+        width: 40%;
+        background-color: white;
+        box-sizing: border-box;
+        font-size: 100px;
+  justify-content: left;
+  align-items: left;
+margin: 20px;
+    }
+
+    /* Style for the right container */
+    .right-container {
+         flex-grow: 1; /* Allows it to grow and fill available space */
+        width: 60%; /* Sets initial width */
+        background-color: white;
+        box-sizing: border-box; /* Includes padding in the width calculation */
+        color: rgb(0, 0, 0); 
+          overflow-y: scroll; /* Enables vertical scrolling only for this container */
+  justify-content: left;
+  align-items: left;
+ margin: 20px;
+  
+    }
+
+    /* Optional: Add content styling to ensure sufficient height for scrolling */
+    .left-container p, .right-container p {
+        /* Example: a long list of items */
+        margin: 20px;
+        margin-bottom: 1em; 
+        line-height: 1.5;
+    }
+
+    /* Optional: Add media queries for mobile responsiveness to stack panels */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .left, .right {
+    flex: 100%; /* Each takes full width */
+    height: 50vh; /* Each takes half the height */
+  }
 }
-
-/* font-face is used to use your own custom, non-systems fonts. place file in resources folder, same has this index.css file*/
-/*@font-face {
-    font-family: "";
-    src: url(./);
-}
-
-/* how you want the structure of your submissions to appear below. display: grid; and display: flex; are good places to start */
-/*.grid {
-
-/*}
-
-/* how do you want each individual submission to appear? do they have a border: 1px black solid; etc. a different font-family, font-size or color? */
-/*.grid div {
-
-}
-
-/* some other things you should consider for css styling are: 
-html, <h1>, <p>, <div>, .classes, #IDs, img, a */

@@ -1,0 +1,145 @@
+.topnav {
+ background-color: white;
+ overflow: hidden
+}
+
+.topnav a {
+      list-style-type: none;
+  margin: 0;
+  text-align: center;
+  padding: 14px 16px;
+  display: flex;
+  float: left;
+    font-family: "Asul", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.topnav-right {
+  float: right;
+}
+.topnav-right :hover {
+  background-color: red;
+  color: white;
+}
+
+
+h1 {
+  color: rgb(0, 0, 0); 
+  font-size: 40px;
+  display: flex;
+  justify-content: left;
+  font-family: "Asul", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+h2 {
+  color: rgb(0, 0, 0); 
+  display: flex;
+  justify-content: left;
+  font-family: "Inclusive Sans", sans-serif;
+    src: url(./InclusiveSans-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+
+body {
+    color: rgb(0, 0, 0);
+  background-color: white;
+   font-family: "Inclusive Sans", sans-serif;
+    src: url(./InclusiveSans-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  height: 100%; /* Ensure the body and html take up the full viewport height */
+    padding: 20px;
+     overflow: hidden; /* Hide default body scrollbar */
+    }
+
+
+.container {
+  display: flex; /* Use Flexbox for layout */
+  height: 100vh; /* Set container height to 100% of the viewport height */
+overflow: hidden;
+
+}
+
+    /* Style for the left container */
+    .left {
+        flex-grow: 1;
+        width: 50%;
+        background-color: white;
+        color: rgb(0, 0, 0); 
+          overflow-y: scroll;
+  justify-content: left;
+  align-items: left;
+  margin-left: 20px;
+ 
+    }
+
+ /* Style for the right container */
+    .right{
+         flex-grow: 1; /* Allows it to grow and fill available space */
+        width: 50%; /* Sets initial width */
+        background-color: white;
+        color: rgb(0, 0, 0); 
+          overflow-y: scroll; /* Enables vertical scrolling only for this container */
+  justify-content: left;
+  align-items: left;
+  margin-right: 20px;
+    }
+
+   
+
+
+/* Optional: Add media queries for mobile responsiveness to stack panels */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .left, .right {
+    flex: 100%; /* Each takes full width */
+    height: 50vh; /* Each takes half the height */
+   
+}
+  
+}
+
+
+.left-container, .right-container {
+  display: grid;
+}
+
+.wrapper1 {
+  grid-column: 1 / 2;
+}
+
+.wrapper1 div {
+   border-style: solid;
+  border-color: red;
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+}
+
+.wrapper3 {
+  grid-column: 1 / 2;
+}
+
+.wrapper3 div {
+   border-style: solid;
+  border-color: red;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+}

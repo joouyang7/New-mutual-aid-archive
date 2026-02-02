@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./resources/index.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
+    <link rel="stylesheet" href="./resources/archiveboard.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
     <link rel="icon" type="image/x-icon" href="./resources/"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -15,25 +15,23 @@
 
 <body>
 
-<header class="table">
+<div class="topnav">
+   
+     <a class="home" href="index.html">Mutual Aid Archive</a>
 
-    <div class="header">
-     <a href="index.html">Mutual Aid Archive</a>
-<a href="about.html">About</a>
-<a href="archiveboard.html">Archive Map</a>
-<a href="offersandrequests.html">Offers and Requests</a>
-<a href="reflection.html">Reflection</a>
-<a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a> 
+     <div class="topnav-right">
+     <a href="about.html">About</a>
+        <a href="archiveboard.html">Archive Map</a>
+     <a href="offersandrequests.html">Offers and Requests</a>
+     <a href="reflection.html">Reflection</a>
+     <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
+     </div>
 
-    </div>
-    
-</header>
+</div>
 
 <h1>Archive Map</h1>
 
-
-
-
+<!-- main container for dots code-->
       
     <div class="main">
    
@@ -60,6 +58,8 @@
 
   <script>
 
+
+<!--
 // gets a random integer between the min and max to randomize location of dots/icons
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -120,5 +120,8 @@ $("#look").on("click", "button[hide]", function(){
 
 
   </script>
+
+  -->
+
   </body>
   </html>

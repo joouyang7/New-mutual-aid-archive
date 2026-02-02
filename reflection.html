@@ -6,34 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutual Aid Archive</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./resources/index.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
+    <link rel="stylesheet" href="./resources/reflection.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
     <link rel="icon" type="image/x-icon" href="./resources/"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 
 <body>
-   <div class="header">
-     <a href="index.html">Mutual Aid Archive</a>
-<a href="about.html">About</a>
-<a href="archiveboard.html">Archive Map</a>
-<a href="offersandrequests.html">Offers and Requests</a>
-<a href="reflection.html">Reflection</a>
-<a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a> 
+<div class="topnav">
+   
+     <a class="home" href="index.html">Mutual Aid Archive</a>
+
+     <div class="topnav-right">
+     <a href="about.html">About</a>
+        <a href="archiveboard.html">Archive Map</a>
+     <a href="offersandrequests.html">Offers and Requests</a>
+     <a href="reflection.html">Reflection</a>
+     <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
+     </div>
+
+</div>
+
+
+
+<div class="content-wrapper">
+    <div class="left-container">
+        <!-- Add your content for the left side here (make it long enough to scroll) -->
+       
+<h1>Reflection</h1>
+<h2>reflection questions here</h2>
 
     </div>
+    <div class="right-container">
+        <!-- Add your content for the right side here -->
     
-</header>
-
-<h1>Reflection</h1>
-<p>reflection questions here</p>
-<h1>Hesitations</h1>
+   
 
 
 <!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
     <div class="grid"> 
 
-    </div>
+   
 
 
 <script>
@@ -67,9 +80,10 @@ fetch(url)
     console.error("Sheet failed to load:", error);
   });
 </script>
+ </div>
+ </div>
+</div>
 
-<h1>Resources</h1>
 
-<p>list resources here</p>
    </body>
    </html>
