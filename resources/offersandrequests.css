@@ -137,7 +137,7 @@ padding: 20px;
     display: grid;
     grid-template-rows: auto;
    border-bottom: 1px solid red;
-  border-color: red;
+  
   font-size: 16px;
   text-align: left;
   align-items: center;
@@ -149,7 +149,7 @@ padding: 20px;
    display: grid;
     grid-template-rows: auto;
     border-bottom: 1px solid red;
-  border-color: red;
+ 
   font-size: 16px;
   text-align: left;
   padding: 5px;
