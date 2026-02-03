@@ -50,6 +50,38 @@
 
 
 <script>
+const SPREADSHEET_ID1 = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
+const TAB_NAME1 = "Sheet1";
+
+const url1 = `https://opensheet.elk.sh/${SPREADSHEET_ID1}/${TAB_NAME1}`;
+
+fetch(url1)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response failed");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Loaded data:", data);
+
+    const grid1 = document.querySelector(".grid");
+
+    data.forEach(entry => {
+      const section1 = document.createElement("section");
+      section1.innerHTML = `
+        <div>${entry.Q5}</div>
+      `;
+      if(!entry.Q5 || entry.Q5.trim() == "") return;
+      grid1.appendChild(section1);
+    });
+  })
+  .catch(error => {
+    console.error("Sheet failed to load:", error);
+  });
+</script>
+
+<script>
 const SPREADSHEET_ID = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
 const TAB_NAME = "Sheet1";
 
@@ -71,9 +103,8 @@ fetch(url)
       const section = document.createElement("section");
       section.innerHTML = `
         <div>${entry.Q4}</div>
-        <div>${entry.Q5}</div>
       `;
-      if(!entry.Q4 || entry.Q4.trim() == ""||!entry.Q5 || entry.Q5.trim() == "") return;
+      if(!entry.Q4 || entry.Q4.trim() == "") return;
       grid.appendChild(section);
     });
   })
@@ -81,6 +112,7 @@ fetch(url)
     console.error("Sheet failed to load:", error);
   });
 </script>
+
  </div>
  </div>
 </div>
