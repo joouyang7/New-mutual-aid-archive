@@ -52,23 +52,21 @@ body {
     src: url(./Ruda-Regular.ttf);
    font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-size: 20px;
   padding: 20px;
+  overflow: hidden;
   
 }
 
 
     /* Ensure the body and html use the full height of the viewport */
-    html, body {
-        height: 100%;
-        overflow: hidden; /* Hide default body scrollbar */
-    }
 
     /* Set up the main container with Flexbox */
     .content-wrapper {
         display: flex; /* Arranges children side by side */
         height: 100vh; /* Makes the wrapper take the full viewport height */
       /* Prevents the main page from scrolling */
+      overflow: hidden;
   }
 
     /* Style for the left container */
@@ -78,9 +76,9 @@ body {
         background-color: white;
         color: rgb(0, 0, 0); 
           overflow-y: scroll;
+          overflow-x: hidden;
   justify-content: left;
   align-items: left;
-  margin-left: 20px;
   word-wrap: normal;
     }
 

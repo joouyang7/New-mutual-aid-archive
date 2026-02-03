@@ -70,8 +70,8 @@ fetch(url)
     data.forEach(entry => {
       const section = document.createElement("section");
       section.innerHTML = `
-        <p>${entry.Q4}</p>
-        <p>${entry.Q5}</p>
+        <div>${entry.Q4}</div>
+        <div>${entry.Q5}</div>
       `;
       grid.appendChild(section);
     });

@@ -44,8 +44,8 @@
 
 <!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
     <div class="timecolumn1"> 
-
-    </div>
+</div>
+    
 
 
 <script>
@@ -68,7 +68,7 @@ fetch(url1)
     data.forEach(entry => {
       const section1 = document.createElement("section1");
       section1.innerHTML = `
-        <div>${entry.Q2} <br> ${entry.Timestamp}</div>
+        <div><p>${entry.Q2}</p><br><p2>${entry.Timestamp}</p2></div>
       `;
       timecolumn1.appendChild(section1);
     });
@@ -77,8 +77,10 @@ fetch(url1)
     console.error("Sheet failed to load:", error);
   });
 </script>
-  </div>
 </div>
+  </div>
+
+
 
  <!-- For the Right Panel-->
    <div class= "right">
@@ -113,9 +115,13 @@ fetch(url3)
     const timecolumn = document.querySelector(".timecolumn");
     data.forEach(entry => {
       const section3 = document.createElement("section3");
+  
       section3.innerHTML = `
-        <div>${entry.Q1}<br>${entry.Timestamp}</div>
+        <div><p>${entry.Q1}</p><br><p2>${entry.Timestamp}</p2></div>
       `;
+      // Assuming 'entry' is an object representing a database record
+
+
       timecolumn.appendChild(section3);
     });
   })

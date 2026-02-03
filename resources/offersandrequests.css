@@ -51,24 +51,37 @@ h2 {
   font-size: 30px;
 }
 
-body {
-    color: rgb(0, 0, 0);
+body{
+    
+  height: 100%; /* Ensure the body and html take up the full viewport height */
+    padding: 20px;
+     overflow: hidden; /* Hide default body scrollbar */
+    }
+
+    p{
+      color: rgb(0, 0, 0);
+  background-color: white;
+  font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+    }
+
+    p2{
+      color: rgb(0, 0, 0);
   background-color: white;
   font-family: "Ruda", sans-serif;
     src: url(./Ruda-Regular.ttf);
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  height: 100%; /* Ensure the body and html take up the full viewport height */
-    padding: 20px;
-     overflow: hidden; /* Hide default body scrollbar */
     }
-
 
 .container {
   display: flex; /* Use Flexbox for layout */
-  height: 100vh; /* Set container height to 100% of the viewport height */
-overflow: hidden;
+   height: 100vh;/* Ensure the container takes full viewport height */
+overflow: hidden; /* Hide default body scrollbar */
 
 }
 
@@ -81,7 +94,8 @@ overflow: hidden;
           overflow-y: scroll;
   justify-content: left;
   align-items: left;
-  margin-left: 20px;
+padding: 20px;
+
  
     }
 
@@ -94,7 +108,7 @@ overflow: hidden;
           overflow-y: scroll; /* Enables vertical scrolling only for this container */
   justify-content: left;
   align-items: left;
-  margin-right: 20px;
+padding: 20px;
     }
 
    
@@ -114,30 +128,25 @@ overflow: hidden;
 }
 
 
-.left-container, .right-container {
-  display: grid;
-}
 
-.wrapper1 {
-  grid-column: 1 / 2;
-}
-
-.wrapper1 div {
+.timecolumn div{
+    display: grid;
+    grid-template-rows: auto;
    border-style: solid;
   border-color: red;
   font-size: 16px;
   text-align: left;
-  padding: 10px;
+  padding: 5px;
+  line-height: 1.25;
 }
 
-.wrapper3 {
-  grid-column: 1 / 2;
-}
-
-.wrapper3 div {
+.timecolumn1 div{
+   display: grid;
+    grid-template-rows: auto;
    border-style: solid;
   border-color: red;
-  padding: 10px;
   font-size: 16px;
   text-align: left;
+  padding: 5px;
+  line-height: 1.25;
 }
