@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Archive Map</title>
-   <link rel="stylesheet" href="./resources/archivemap.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
+   <link rel="stylesheet" href="./resources/experience.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
    <link rel="icon" type="image/x-icon" href="./resources/dot.png"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
@@ -17,11 +17,11 @@
      <a class="home" href="index.html">Mutual Aid Archive</a>
 
      <div class="topnav-right">
-     <a href="about.html">About</a>
-        <a href="archivemap.html">Archive Map</a>
-     <a href="offersandrequests.html">Offers and Requests</a>
-     <a href="reflection.html">Reflection</a>
-     <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
+     <a href="read.html">Read</a>
+        <a href="experience.html">Experience</a>
+     <a href="need.html">Need</a>
+     <a href="reflect.html">Reflect</a>
+     <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Participate</a>
      </div>
 
 </div>
@@ -43,6 +43,7 @@
       <div class="wrapper">
         <div class="modal">
     <span class="dot"></span>
+
     <p></p>
     <button hide>Back</button>
         </div>
@@ -73,12 +74,12 @@ $(document).ready(function () {
     
     data.forEach(function (row, index) {
       if(index == 0) return; // Skip the header row
-      
+       if(!row.Q3 || row.Q3.trim() == "") return;
       let div = $(`<div class='modal' type='` + row.type +`' index="` + index +`">
-        <span class='dot'>` + row.cloud +`</span>
-        <p>` +  row.msg + `</p>
+       <span class='dot'>` + row.cloud +`</span>
+        <p>` +  row.Q3 + `</p>
         </div>`)
-      .attr("title", row.msg)
+      .attr("title", row.Q3)
       .css("top", getRandomInt(10, 80) + "%")
       .css("left", getRandomInt(10, 90) + "%")
       .appendTo("#grid");
@@ -86,6 +87,7 @@ $(document).ready(function () {
   });  
 });
 
+ 
 
 // Look at dots
 $("#grid").on("click", ".modal", function() {
@@ -94,6 +96,8 @@ $("#grid").on("click", ".modal", function() {
   let index = $(this).attr("index");
   let symbol = $(this).find(".dot").text();
   let msg = $(this).find("p").text();
+
+
 
   // Update the modal or display area with the information
   $("#look .modal .dot").text(symbol);

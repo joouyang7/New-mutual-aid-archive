@@ -15,6 +15,7 @@ font-family: "Silom", system-ui;
   font-style: normal;
   text-decoration: none;
   color: black;
+  font-size: 16px;
 }
 
 .topnav-right {
@@ -25,8 +26,8 @@ font-family: "Silom", system-ui;
   color: white;
   cursor: pointer;
     transition: .4s ease-in-out;
-    
 }
+
 h1 {
   color: rgb(0, 0, 0); 
   font-size: 30px;
@@ -47,11 +48,11 @@ h2 {
   color: rgb(0, 0, 0); 
   display: flex;
   justify-content: left;
-       font-family: "Ruda", sans-serif;
-    src: url(./Ruda-Regular.ttf);
-   font-weight: 400;
+font-family: "Silom", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 body {
@@ -105,38 +106,40 @@ a:visited {
    
   }
   
+
+
   #grid .modal{
     position: absolute;
     text-align: left;
     margin: .5rem;
     cursor: pointer;
+    padding: 10px;
   }
   
   #grid .modal[seen]{
     opacity: 0.2;
   }
   
-  .modal .dot{
+ .dot{
     font-family: "Ruda", sans-serif;
     src: url(./Ruda-Regular.ttf);
    font-weight: 400;
+      font-size: 60px;
   font-style: normal;
-  font-size: 40px;
-      transition: font-size transform .4s ease-in-out;
-transform: translateY(10px); 
+  padding: 10px;
+     
   }
 
   .modal .dot:hover{
     color: black;
-   font-size: 80px;
-      
+          transition: .5s ease-in-out;
 
   }
   
   #grid .modal p {
     display: none;
     font-size: .6rem;
-    margin: 0;
+    padding: 10px;
   }
   
   /* Look at an entry */

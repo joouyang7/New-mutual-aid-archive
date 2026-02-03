@@ -45,11 +45,11 @@ h2 {
   color: rgb(0, 0, 0); 
   display: flex;
   justify-content: left;
-       font-family: "Ruda", sans-serif;
-    src: url(./Ruda-Regular.ttf);
-   font-weight: 400;
+font-family: "Silom", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 
