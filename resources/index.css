@@ -22,9 +22,12 @@ font-family: "Silom", system-ui;
 .topnav-right {
   float: right;
 }
-.topnav-right :hover {
+.topnav-right a:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
+    transition: .4s ease-in-out;
+    
 }
 
 

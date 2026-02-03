@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Archive Map</title>
+   <link rel="stylesheet" href="./resources/archivemap.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
+   <link rel="icon" type="image/x-icon" href="./resources/dot.png"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+<body>
+<!-- navigation bar-->
+     <div class="topnav">
+   
+     <a class="home" href="index.html">Mutual Aid Archive</a>
+
+     <div class="topnav-right">
+     <a href="about.html">About</a>
+        <a href="archivemap.html">Archive Map</a>
+     <a href="offersandrequests.html">Offers and Requests</a>
+     <a href="reflection.html">Reflection</a>
+     <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
+     </div>
+
+</div>
+
+
+    <div class="top1">    <!-- Add your content for the left side here (make it long enough to scroll) -->
+<h1>Describe an experience in which you participated in mutual aid. </h1>
+<!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
+</div>
+ 
+       
+   <div id="grid">
+
+   </div>
+
+<!--  This appears when you click on a dot  -->
+    
+    <div id="look">
+      <div class="wrapper">
+        <div class="modal">
+    <span class="dot"></span>
+    <p></p>
+    <button hide>Back</button>
+        </div>
+        </div>
+    </div>
+
+
+<!-- ****************************************************************************
+Below is javascript for connecting your google sheet to autopopulate the HTML-->
+
+  <script>
+
+// gets a random integer between the min and max
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+var SPREADSHEET_ID_AND_TAB = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8/Sheet1";
+
+
+$(document).ready(function () {
+  
+  $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB, function (data) {
+    
+    data.forEach(function (row, index) {
+      if(index == 0) return; // Skip the header row
+      
+      let div = $(`<div class='modal' type='` + row.type +`' index="` + index +`">
+        <span class='dot'>` + row.cloud +`</span>
+        <p>` +  row.msg + `</p>
+        </div>`)
+      .attr("title", row.msg)
+      .css("top", getRandomInt(10, 80) + "%")
+      .css("left", getRandomInt(10, 90) + "%")
+      .appendTo("#grid");
+    });
+  });  
+});
+
+
+// Look at dots
+$("#grid").on("click", ".modal", function() {
+  
+  // Get information from the clicked dots
+  let index = $(this).attr("index");
+  let symbol = $(this).find(".dot").text();
+  let msg = $(this).find("p").text();
+
+  // Update the modal or display area with the information
+  $("#look .modal .dot").text(symbol);
+  $("#look .modal p").text(msg);
+
+  $("#look").show(); // Show the modal
+
+  // Mark dot as seen
+  $("#grid .modal[index='" + index + "']").attr("seen", "");
+});
+
+
+// hide when button is clicked
+$("#look").on("click", "button[hide]", function(){
+  $("#look").hide();
+});
+
+
+
+  </script>
+
+
+<!--This code was provided in Avrie Allen's Wintersession course at RISD, Activating Networks, Gathering Knowledge and was initially inspired by Chia Amisola's sheet sites tutorial with Developh-->
+</body>
+</html>

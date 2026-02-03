@@ -20,9 +20,13 @@ font-family: "Silom", system-ui;
 .topnav-right {
   float: right;
 }
-.topnav-right :hover {
+
+.topnav-right a:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
+    transition: .4s ease-in-out;
+    
 }
 h1 {
   color: rgb(0, 0, 0); 
@@ -75,8 +79,7 @@ body {
         width: 50%;
         background-color: white;
         color: rgb(0, 0, 0); 
-          overflow-y: scroll;
-          overflow-x: hidden;
+          overflow: hidden; /* Enables vertical scrolling only for this container */
   justify-content: left;
   align-items: left;
   word-wrap: normal;
@@ -88,7 +91,7 @@ body {
         width: 50%; /* Sets initial width */
         background-color: white;
         color: rgb(0, 0, 0); 
-          overflow: hidden; /* Enables vertical scrolling only for this container */
+          overflow-y: scroll; /* Enables vertical scrolling only for this container */
   justify-content: left;
   align-items: left;
   margin-right: 20px;

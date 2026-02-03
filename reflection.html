@@ -19,7 +19,7 @@
 
      <div class="topnav-right">
      <a href="about.html">About</a>
-        <a href="archiveboard.html">Archive Map</a>
+        <a href="archivemap.html">Archive Map</a>
      <a href="offersandrequests.html">Offers and Requests</a>
      <a href="reflection.html">Reflection</a>
      <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
@@ -34,7 +34,7 @@
         <!-- Add your content for the left side here (make it long enough to scroll) -->
        
 <h1>Reflection</h1>
-<h2>reflection questions here</h2>
+<h2>What are your reservations, fears, concerns, and comments about mutual aid?</h2>
 
     </div>
     <div class="right-container">
@@ -51,7 +51,7 @@
 
 <script>
 const SPREADSHEET_ID = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
-const TAB_NAME = "Tab";
+const TAB_NAME = "Sheet1";
 
 const url = `https://opensheet.elk.sh/${SPREADSHEET_ID}/${TAB_NAME}`;
 
@@ -73,6 +73,7 @@ fetch(url)
         <div>${entry.Q4}</div>
         <div>${entry.Q5}</div>
       `;
+      if(!entry.Q4 || entry.Q4.trim() == ""||!entry.Q5 || entry.Q5.trim() == "") return;
       grid.appendChild(section);
     });
   })

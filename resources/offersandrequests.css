@@ -22,15 +22,18 @@
 .topnav-right {
   float: right;
 }
-.topnav-right :hover {
+.topnav-right a:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
+    transition: .4s ease-in-out;
+    
 }
 
 
 h1 {
   color: rgb(0, 0, 0); 
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   justify-content: left;
  font-family: "Silom", system-ui;
@@ -38,18 +41,18 @@ h1 {
   font-style: normal;
 }
 
-
-
 h2 {
   color: rgb(0, 0, 0); 
   display: flex;
   justify-content: left;
-  font-family: "Ruda", sans-serif;
+       font-family: "Ruda", sans-serif;
     src: url(./Ruda-Regular.ttf);
-  font-weight: 700;
+   font-weight: 400;
   font-style: normal;
   font-size: 30px;
 }
+
+
 
 body{
     
@@ -58,7 +61,7 @@ body{
      overflow: hidden; /* Hide default body scrollbar */
     }
 
-    p{
+    p {
       color: rgb(0, 0, 0);
   background-color: white;
   font-family: "Ruda", sans-serif;
@@ -80,8 +83,8 @@ body{
 
 .container {
   display: flex; /* Use Flexbox for layout */
-   height: 100vh;/* Ensure the container takes full viewport height */
-overflow: hidden; /* Hide default body scrollbar */
+   height: 90vh;/* Ensure the container takes full viewport height */
+
 
 }
 
@@ -109,10 +112,13 @@ padding: 20px;
   justify-content: left;
   align-items: left;
 padding: 20px;
+
     }
 
-   
-
+   .requests:empty { 
+    display: none 
+  }
+  
 
 /* Optional: Add media queries for mobile responsiveness to stack panels */
 @media screen and (max-width: 600px) {
@@ -127,15 +133,14 @@ padding: 20px;
   
 }
 
-
-
 .timecolumn div{
     display: grid;
     grid-template-rows: auto;
-   border-style: solid;
+   border-bottom: 1px solid red;
   border-color: red;
   font-size: 16px;
   text-align: left;
+  align-items: center;
   padding: 5px;
   line-height: 1.25;
 }
@@ -143,7 +148,7 @@ padding: 20px;
 .timecolumn1 div{
    display: grid;
     grid-template-rows: auto;
-   border-style: solid;
+    border-bottom: 1px solid red;
   border-color: red;
   font-size: 16px;
   text-align: left;

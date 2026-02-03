@@ -18,9 +18,9 @@
    
      <a class="home" href="index.html">Mutual Aid Archive</a>
 
-     <div class="topnav-right">
+    <div class="topnav-right">
      <a href="about.html">About</a>
-        <a href="archiveboard.html">Archive Map</a>
+        <a href="archivemap.html">Archive Map</a>
      <a href="offersandrequests.html">Offers and Requests</a>
      <a href="reflection.html">Reflection</a>
      <a href="https://forms.gle/U9FBMPA5ppuhJywo6" target="_blank">Submit</a>
@@ -50,7 +50,7 @@
 
 <script>
 const SPREADSHEET_ID1 = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
-const TAB_NAME1 = "Tab";
+const TAB_NAME1 = "Sheet1";
 
 const url1 = `https://opensheet.elk.sh/${SPREADSHEET_ID1}/${TAB_NAME1}`;
 
@@ -66,10 +66,12 @@ fetch(url1)
 
     const timecolumn1 = document.querySelector(".timecolumn1");
     data.forEach(entry => {
-      const section1 = document.createElement("section1");
+      const section1 = document.createElement("section");
       section1.innerHTML = `
         <div><p>${entry.Q2}</p><br><p2>${entry.Timestamp}</p2></div>
       `;
+if(!entry.Q2 || entry.Q2.trim() == "") return;
+
       timecolumn1.appendChild(section1);
     });
   })
@@ -98,7 +100,7 @@ fetch(url1)
 
 <script>
 const SPREADSHEET_ID3 = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
-const TAB_NAME3 = "Tab";
+const TAB_NAME3 = "Sheet1";
 
 const url3 = `https://opensheet.elk.sh/${SPREADSHEET_ID3}/${TAB_NAME3}`;
 
@@ -114,14 +116,13 @@ fetch(url3)
 
     const timecolumn = document.querySelector(".timecolumn");
     data.forEach(entry => {
-      const section3 = document.createElement("section3");
+      const section3 = document.createElement("section");
   
       section3.innerHTML = `
-        <div><p>${entry.Q1}</p><br><p2>${entry.Timestamp}</p2></div>
+        <div class="requests"><p>${entry.Q1}</p><br><p2>${entry.Timestamp}</p2></div>
       `;
-      // Assuming 'entry' is an object representing a database record
 
-
+   if(!entry.Q1 || entry.Q1.trim() == "") return;
       timecolumn.appendChild(section3);
     });
   })
