@@ -4,10 +4,10 @@
 <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ <title>Archive Map</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./resources/archiveboard.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
-    <link rel="icon" type="image/x-icon" href="./resources/"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
+    <link rel="icon" type="image/x-icon" href="./resources/icon.png"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
@@ -31,6 +31,7 @@
 
 <h1>Archive Map</h1>
 
+   
 <!-- main container for dots code-->
       
     <div class="main">
@@ -83,10 +84,10 @@ $(document).ready(function () {
       if(index == 0) return; // Skip the header row
       
       let div = $(<div class='cloud' type=' + row.type +' index=" + index +`">
-        <span class='emoji'> + row.cloud +</span>
-        <p> +  row.msg + </p>
+        <span class='dot'> + row.dot +</span>
+        <p> +  row.Q3 + </p>
         </div>`)
-      .attr("title", row.msg)
+      .attr("title", row.Q3)
       .css("top", getRandomInt(0, 80) + "%")
       .css("left", getRandomInt(0, 90) + "%")
       .data('img', row.img) // Store the image link in the data attribute
@@ -104,11 +105,11 @@ $("#responses").on("click", ".each-icon", function() {
   // Get information from the clicked dots
   let index = $(this).attr("index");
   let symbol = $(this).find(".icons").text();
-  let msg = $(this).find("p").text();
+  let Q3 = $(this).find("p").text();
 
   // Update the modal or display area with the information
   $("#look .each-icon .icons").text(symbol);
-  $("#look .each-icon p").text(msg);
+  $("#look .each-icon p").text(Q3);
 
   $("#look").show(); // Show the modal
 
