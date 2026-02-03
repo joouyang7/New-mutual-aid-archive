@@ -59,7 +59,7 @@
   <script>
 
 
-<!--
+
 // gets a random integer between the min and max to randomize location of dots/icons
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -78,9 +78,9 @@ $(document).ready(function () {
     data.forEach(function (row, index) {
       if(index == 0) return; // Skip the header row
       
-      let div = $(<div class='cloud' type=' + row.type +' index=" + index +`">
-        <span class='emoji'> + row.cloud +</span>
-        <p> +  row.msg + </p>
+      let div = $(`<div class='cloud' type='${row.type}' index="${index}">
+        <span class='emoji'>${row.cloud}</span>
+        <p>${row.msg}</p>
         </div>`)
       .attr("title", row.msg)
       .css("top", getRandomInt(0, 80) + "%")
@@ -121,7 +121,7 @@ $("#look").on("click", "button[hide]", function(){
 
   </script>
 
-  -->
+
 
   </body>
   </html>
