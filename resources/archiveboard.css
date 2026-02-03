@@ -56,6 +56,66 @@ body {
     src: url(./Ruda-Regular.ttf);
 }
 
+
+button:hover {
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+#title {
+    position: absolute;
+    left: 2rem;
+    top:1rem;
+    display: block;
+    z-index: -2;
+}
+
+#title2 {
+    position: absolute;
+    right: 2rem;
+    top:1rem;
+    display: block;
+    z-index: -2;
+    text-align: right;
+}
+
+#title3 {
+    position: absolute;
+    top:8rem;
+    right: 60%;
+    text-align: right;
+    z-index: -2;
+}
+
+#title4 {
+    position: absolute;
+    top:13rem;
+    z-index: -2;
+    left: 60%;
+    text-align: left;
+}
+
+.main-title {
+    font-family: "MatrisePro";
+    font-size: 6rem;
+    position: fixed;
+    bottom: 0; left: -1rem;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: -3;
+}
+  
   #responses{
     position: absolute;
     height: 100%;
@@ -96,7 +156,44 @@ body {
   }
 
   
+  
+  
+  /* Filter the clouds */
+  
+  #filter{
+    position: fixed;
+    bottom: 1rem; left: -1rem;
+    width: 100%;
+     text-align: center;
+  }
+  
+  #filter button, button, .top{
+    cursor: pointer;
+    font-size: 1 rem;
+    color: black;
+    font-family: "MatrisePro", monospace;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 9rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    margin: .5rem;
+  }
 
+  #filter button:hover, .top:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: .4s ease-in-out;
+}
+
+.top {
+    position: fixed;
+    top: 0; left: 47vw;
+    text-align: center;
+    font-family: "MatrisePro", monospace;
+    cursor: pointer;
+}
+  
   
   /* Look at a responses */
   
@@ -127,7 +224,6 @@ body {
     flex-direction: column;
     text-align: center; /change with whatever justification you want text on popup to be/
   }
-
 
   /* smartphone */
 @media only screen and (max-width: 1000px), (orientation: portrait) {

@@ -36,7 +36,6 @@
     <div class="main">
    
 </div>
-      
     <!--  Dots are dumped here -->
     <div id="responses">
     
@@ -56,9 +55,13 @@
 
 
 
+
+<!-- this javascript was modified from a sheets site tutorial by chia amisola  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="code.js" type="text/javascript"></script>
+  </body>
+
   <script>
-
-
 
 // gets a random integer between the min and max to randomize location of dots/icons
 function getRandomInt(min, max) {
@@ -68,6 +71,7 @@ function getRandomInt(min, max) {
 }
 
 
+
 var SPREADSHEET_ID_AND_TAB = "1HtJRwCgTY0scOjsu7GwSP3ytdoOWguoJnkRo0WLvTj8";
 
 
@@ -75,12 +79,12 @@ $(document).ready(function () {
   
   $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB, function (data) {
     
-    data.forEach(function (row, index) {
+        data.forEach(function (row, index) {
       if(index == 0) return; // Skip the header row
       
-      let div = $(`<div class='cloud' type='${row.type}' index="${index}">
-        <span class='emoji'>${row.cloud}</span>
-        <p>${row.msg}</p>
+      let div = $(<div class='cloud' type=' + row.type +' index=" + index +`">
+        <span class='emoji'> + row.cloud +</span>
+        <p> +  row.msg + </p>
         </div>`)
       .attr("title", row.msg)
       .css("top", getRandomInt(0, 80) + "%")
@@ -93,17 +97,18 @@ $(document).ready(function () {
   
 
 
+
 // Look at dots
 $("#responses").on("click", ".each-icon", function() {
   
   // Get information from the clicked dots
   let index = $(this).attr("index");
   let symbol = $(this).find(".icons").text();
-  let Q3 = $(this).find("p").text();
+  let msg = $(this).find("p").text();
 
   // Update the modal or display area with the information
   $("#look .each-icon .icons").text(symbol);
-  $("#look .each-icon p").text(Q3);
+  $("#look .each-icon p").text(msg);
 
   $("#look").show(); // Show the modal
 
@@ -120,6 +125,7 @@ $("#look").on("click", "button[hide]", function(){
 
 
   </script>
+</html>
 
 
 
