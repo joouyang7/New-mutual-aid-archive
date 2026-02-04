@@ -65,7 +65,18 @@ body {
   overflow: hidden;
   padding: 14px;
     }
-    
+
+    p2 {
+          color: rgb(0, 0, 0);
+  background-color:white;
+  font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+    }
+
     /* Set up the main container with Flexbox */
     .content-wrapper {
         display: flex; /* Arranges children side by side */
@@ -81,7 +92,9 @@ body {
         box-sizing: border-box;
   justify-content: left;
   align-items: left;
-  margin-left: 20px;
+  padding-right: 20px;
+padding-bottom: 20px;
+padding-left: 14px;
  
     }
 
@@ -117,19 +130,16 @@ height: 90vh;
         line-height: 1.5;
     }
 
-    /* Optional: Add media queries for mobile responsiveness to stack panels */
 @media screen and (max-width: 600px) {
-  .container {
+  .content-wrapper {
     flex-direction: column; /* Stack vertically on small screens */
-    
   }
-  .left, .right {
+  .left-container, .right-container {
     flex: 100%; /* Each takes full width */
     height: 50vh; /* Each takes half the height */
-  }
-
    
-
+}
+  
 }
 
 .grid div{

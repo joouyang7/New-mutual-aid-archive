@@ -52,6 +52,8 @@ font-family: "Silom", system-ui;
   font-size: 24px;
 }
 
+
+
 body {
     color: rgb(0, 0, 0);
   background-color:white;
@@ -65,13 +67,22 @@ body {
   overflow: hidden;
   padding: 14px;
     }
-    
+
+
+
+    p2 {
+      font-size: 20px;
+    }
+
   /* Set up the main container with Flexbox */
     .content-wrapper {
         display: flex; /* Arranges children side by side */
-        height: 70vh; /* Makes the wrapper take the full viewport height */
+        height: 90vh; /* Makes the wrapper take the full viewport height */
          /* Prevents the main page from scrolling */
-   padding: 14px;
+   padding-left: 14px;
+
+   
+    
         }
 
     /* Style for the left container */
@@ -97,13 +108,14 @@ overflow: hidden;
         background-color: white;
         box-sizing: border-box; /* Includes padding in the width calculation */
         color: rgb(0, 0, 0); 
+         padding-left: 14px;
         
   justify-content: center;
   align-items: center;
 
 overflow: hidden;
 display: flex;
-padding: 14px;
+
   
     }
     
@@ -112,5 +124,33 @@ img {
   width: 80%;
   display: flex;
   justify-content: left;
-padding: 14px;
+  align-items: center;
+
+}
+
+@media screen and (max-width: 600px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .left-container{
+flex: 100%; /* Each takes full width */
+    height: 50vh; /* Each takes half the height */
+    overflow-y: scroll;
+  }
+  
+  .right-container {
+   flex: 100%; /* Each takes full width */
+    height: 50vh; /* Each takes half the height */
+overflow: hidden;
+  
+}
+
+   .topnav a {
+        font-size: 10px;
+      }
+
+      .top1 h1{
+        font-size: 10px;
+      }
+      
 }

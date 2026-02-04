@@ -65,12 +65,21 @@ body {
   overflow: hidden;
   padding: 14px;
     }
-    
+
+    p2{
+      font-family: "Ruda", sans-serif;
+    src: url(./Ruda-Regular.ttf);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+    }
+
 .mutualfood-container {
   display: flex;
   justify-content: left; /* Centers horizontally */
   align-items: center;     /* Centers vertically */
-  height: 70vh;           /* Sets container height to full viewport height */
+  height: 65vh;           /* Sets container height to full viewport height */
 }
 img {
   width: 80%;
@@ -82,9 +91,10 @@ img {
     /* Set up the main container with Flexbox */
     .content-wrapper {
         display: flex; /* Arranges children side by side */
-        height: 100vh; /* Makes the wrapper take the full viewport height */
+        height: 90vh; /* Makes the wrapper take the full viewport height */
       /* Prevents the main page from scrolling */
       overflow: hidden;
+      
   }
 
     /* Style for the left container */
@@ -98,28 +108,39 @@ img {
   align-items: left;
   word-wrap: normal;
   padding: 14px;
+  
     }
 
 
     /* Style for the right container */
     .right {
-         flex-grow: 1; /* Allows it to grow and fill available space */
+         flex-grow: 0; /* Allows it to grow and fill available space */
         width: 50%; /* Sets initial width */
         background-color: white;
         color: rgb(0, 0, 0); 
           overflow-y: scroll; /* Enables vertical scrolling only for this container */
+  overflow-x: hidden; /* Hides horizontal overflow */
   justify-content: left;
   align-items: left;
   margin-right: 20px;
+  padding: 14px;
   
     }
 
-      @media screen and (max-width: 768px) {
-        .content-wrapper {
-            flex-direction: column; /* Stack panels vertically on small screens */
-        }
-        .left, .right {
-            width: 100%; /* Full width for both containers */
-            height: 50vh; /* Half viewport height each */
-        }
+   @media screen and (max-width: 600px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .left, .right {
+    flex: 100%; /* Each takes full width */
+    height: 50vh; /* Each takes half the height */
+   
+}
+   .topnav a {
+        font-size: 10px;
       }
+
+      .top1 h1{
+        font-size: 10px;
+      }
+}

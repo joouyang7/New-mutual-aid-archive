@@ -15,7 +15,7 @@
 <body>
 <div class="topnav">
    
-     <a class="home" href="index.html">Mutual Aid Archive</a>
+     <a class="home" href="index.html">"Mutual Aid" Archive</a>
 
     <div class="topnav-right">
      <a href="read.html">Read</a>
@@ -73,7 +73,7 @@ fetch(url1)
     data.forEach(entry => {
       const section1 = document.createElement("section");
       section1.innerHTML = `
-        <div>${entry.Q5}</div>
+        <div><p2> ${entry.Q5}</p2></div>
       `;
       if(!entry.Q5 || entry.Q5.trim() == "") return;
       grid1.appendChild(section1);
@@ -105,7 +105,7 @@ fetch(url)
     data.forEach(entry => {
       const section = document.createElement("section");
       section.innerHTML = `
-        <div>${entry.Q4}</div>
+        <div><p2> ${entry.Q4}</p2></div>
       `;
       if(!entry.Q4 || entry.Q4.trim() == "") return;
       grid.appendChild(section);
