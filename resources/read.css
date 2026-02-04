@@ -63,7 +63,7 @@ body {
   font-size: 16px;
   height: 100%; /* Ensure the body and html take up the full viewport height */
   overflow: hidden;
-  padding: 14px;
+  padding:14px;
     }
 
     p2{
@@ -107,7 +107,9 @@ img {
   justify-content: left;
   align-items: left;
   word-wrap: normal;
-  padding: 14px;
+  padding-bottom: 14px;
+    padding-left: 14px;
+      padding-right: 14px;
   
     }
 
