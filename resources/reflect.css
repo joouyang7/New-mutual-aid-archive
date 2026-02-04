@@ -10,13 +10,13 @@
   padding: 14px 16px;
   display: flex;
   float: left;
- font-family: "Silom", system-ui;
+font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
   color: black;
-  font-size: 16px;
 }
+
 
 .topnav-right {
   float: right;
@@ -29,16 +29,16 @@
     
 }
 
+
 h1 {
   color: rgb(0, 0, 0); 
   font-size: 40px;
   display: flex;
   justify-content: left;
-   font-family: "Silom", system-ui;
+ font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
 }
-
 
 
 h2 {
@@ -54,18 +54,18 @@ font-family: "Silom", system-ui;
 
 body {
     color: rgb(0, 0, 0);
-  background-color: white;
- font-family: "Ruda", sans-serif;
+  background-color:white;
+  font-family: "Ruda", sans-serif;
     src: url(./Ruda-Regular.ttf);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: 16px;
   height: 100%; /* Ensure the body and html take up the full viewport height */
-    padding: 20px;
-     overflow: hidden; /* Hide default body scrollbar */
+  overflow: hidden;
+  padding: 14px;
     }
-
+    
     /* Set up the main container with Flexbox */
     .content-wrapper {
         display: flex; /* Arranges children side by side */

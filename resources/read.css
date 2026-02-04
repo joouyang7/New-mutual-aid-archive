@@ -15,13 +15,12 @@ font-family: "Silom", system-ui;
   font-style: normal;
   text-decoration: none;
   color: black;
-  font-size: 16px;
 }
+
 
 .topnav-right {
   float: right;
 }
-
 .topnav-right a:hover {
   background-color: red;
   color: white;
@@ -29,15 +28,18 @@ font-family: "Silom", system-ui;
     transition: .4s ease-in-out;
     
 }
+
+
 h1 {
   color: rgb(0, 0, 0); 
-  font-size: 30px;
+  font-size: 40px;
   display: flex;
   justify-content: left;
  font-family: "Silom", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+
 
 h2 {
   color: rgb(0, 0, 0); 
@@ -52,16 +54,18 @@ font-family: "Silom", system-ui;
 
 body {
     color: rgb(0, 0, 0);
- background: white;
- font-family: "Ruda", sans-serif;
+  background-color:white;
+  font-family: "Ruda", sans-serif;
     src: url(./Ruda-Regular.ttf);
-   font-weight: 400;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 16px;
+  height: 100%; /* Ensure the body and html take up the full viewport height */
   overflow: hidden;
-  
-}
+  padding: 14px;
+    }
+    
 .mutualfood-container {
   display: flex;
   justify-content: left; /* Centers horizontally */
@@ -93,6 +97,7 @@ img {
   justify-content: left;
   align-items: left;
   word-wrap: normal;
+  padding: 14px;
     }
 
 
